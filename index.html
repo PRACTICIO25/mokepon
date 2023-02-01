@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilos/index.css">
+    <title>Mokepon</title>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <h1 class="titulo">MOKEPON</h1>
+    <section id="seleccionar-mascota" class="marco-mascotas">
+        <h2 class="titulo2">Elige tu mascota:</h2>
+            <div class="contenedor-btns-atq">
+                <div class="separadores">
+                    <input type="radio" name="mascota" id="carmelium">
+                    <label for="carmelium">Carmelium</label>
+                </div>
+                <div class="separadores">
+                    <input type="radio" name="mascota" id="malaquias">
+                    <label for="malaquias">Malaquias</label>
+                </div>
+                <div class="separadores">
+                    <input type="radio" name="mascota" id="conetizon">
+                    <label for="conetizon">Conetizon</label>
+                </div>
+        </div>
+        <button id="btn-mascotas" class="seleccionar">Seleccionar</button>
+    </section>
+    
+    <div class="marco-mensajes">
+        <!-- Elegir ataque -->
+        <section id="esconderA" class="marco-ataque" hidden>
+            <h2 class="titulo-atq">Elige tu ataque:</h2>
+            <div class="marco-mensaje">
+                <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">10</span> vidas.</p>
+                <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">10</span> vidas.</p>
+            </div>
+            <div class="marco-btns-atq">
+                <button id="btn-fuego" class="btn-atq" disabled>Fuego 🔥</button>
+                <button id="btn-agua" class="btn-atq" disabled>Agua 💧</button>
+                <button id="btn-tierra" class="btn-atq" disabled>Tierra 🌱</button>
+            </div>
+        </section>
+        <div id="esconderM" class="marco-resultados" hidden>
+            <!-- Mensaje 1 -->
+            <section  class="marco-lucha">
+                <p>Tu mascota <span id="mascota-jugador1"></span> atacó con <span id="ataque-jugador"></span></p>
+                <br>
+                <p>La mascota <span id="mascota-enemigo1"></span> del enemigo atacó con <span id="ataque-enemigo"></span></p>
+            </section>
+            <!-- Mensaje 2 -->
+            <section  id="esconderMF" class="marco-acciones">
+                <p id="mensaje"></p>
+                <br>
+                <br>
+                <b id="atacaN">Ataca nuevamente</b>
+            </section>
+        </div>
+    </div>
+
+    <!-- Botón reiniciar -->
+    <footer id="esconderM" class="marco-btn-reiniciar">
+        <button id="reiniciar" hidden>Reiniciar</button>
+    </footer>
+</body>
+</html>
