@@ -15,11 +15,20 @@ body {
     background-size: cover;
 }
 
+.marco-todo {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .titulo {
     width: 90%;
     text-align: center;
     color: rgb(255, 0, 0);
-    margin: 1% 5% 0;
+    margin: 0% 5% 3%;
     font-size: 66pt;
     font-family: 'Fredoka One', cursive;
     font-weight: bold;
@@ -119,13 +128,11 @@ input {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: -3%;
 }
 
 .marco-ataque {
     width: 40%;
     background-color: rgba(124, 56, 0, 0.651);
-    margin: 3% ;
     padding: 1%;
     flex-direction: column;
     justify-content: center;
@@ -176,7 +183,7 @@ input {
 
 .marco-resultados {
     width: 50%;
-    margin-right: 1%;
+    margin: 1%;
     justify-content: center;
     align-items: center;
 }
@@ -417,16 +424,20 @@ p {
 
 @media (max-width: 500px) {
 
-    .titulo2 {
-        font-size: 22pt;
-    }
-
     body {
-        display: flex;
+        display: block;
         height: 100vh;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+    }
+
+    .marco-todo {
+        height: 60vh;
+    }
+
+    .titulo2 {
+        font-size: 22pt;
     }
 
     .marco-mascotas {
@@ -438,4 +449,46 @@ p {
         font-size: 12pt;
         height: 25vh;
     }
+
+    .marco-mensajes {
+        justify-content: left;
+        height: 50vh;
+    }
+    
+    .marco-ataque {
+        width: 50%;
+        margin: 3% 0;
+    }
+    
+    .titulo-atq {
+        margin: 0 1% 1%;
+        font-size: 16pt;
+    }
+
+    .tarjetas {
+        height: 20vh;
+    }
+
+    .marco-resultados {
+        height: 40vh;
+        block-size: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #mascota-jugador, #mascota-enemigo  {
+        font-size: 10pt;
+    }
+
+    #vidas-jugador, #vidas-enemigo {
+        font-size: 36pt;
+    }
+
+    .marco-lucha, .marco-acciones {
+        width: 100%;
+        height: 22vh;
+        margin: 1%;
+        font-size: 10pt;
+    }
+    
 }
