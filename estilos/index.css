@@ -91,11 +91,7 @@ input {
     width: 90%;
 }
 
-#mascota-jugador, #mascota-enemigo, #mascota-jugador1, #mascota-enemigo1 {
-    font-weight: bold;
-}
-
-#vidas-enemigo, #vidas-jugador {
+#mascota-jugador1, #mascota-enemigo1 {
     font-weight: bold;
 }
 
@@ -123,6 +119,7 @@ input {
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: -3%;
 }
 
 .marco-ataque {
@@ -136,10 +133,10 @@ input {
 }
 
 .titulo-atq {
-    margin: 0 10% 5%;
+    margin: 0 10% 1%;
     font-size: 28pt;
     font-weight: bold;
-    font-family: Arial;
+    font-family: 'Fredoka One', cursive;
     padding: 1%;
     color: black;
     -webkit-text-stroke: 1px white;
@@ -147,9 +144,34 @@ input {
 
 .marco-mensaje {
     width: 94%;
-    background-color: white;
-    padding: 2%;
+    padding: 1%;
     font-size: 14pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tarjetas {
+    width: 50%;
+    height: 30vh;
+    background-color: rgba(37, 0, 124, 0.651);
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border: 2px white solid;
+}
+
+#mascota-jugador, #mascota-enemigo {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 0 0 2%;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    -webkit-text-stroke: 2px black;
 }
 
 .marco-resultados {
@@ -164,7 +186,11 @@ p {
 }
 
 #vidas-enemigo, #vidas-jugador {
-    font-size: 20pt;
+    font-size: 48pt;
+    font-weight: bold;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    -webkit-text-stroke: 2px black;
 }
 
 .marco-btns-atq {
@@ -214,7 +240,10 @@ p {
     margin: 2%;
     margin-left: 0;
     padding: 4% 2%;
-    font-size: 14pt;
+    font-size: 16pt;
+    font-family: 'Fredoka One', cursive;
+    color: black;
+    -webkit-text-stroke: 1px white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -227,7 +256,10 @@ p {
     background-color: rgba(124, 56, 0, 0.651);
     border: 2px rgba(124, 56, 0, 0.651) solid;
     padding: 4% 6%;
-    font-size: 14pt;
+    font-size: 16pt;
+    font-family: 'Fredoka One', cursive;
+    color: black;
+    -webkit-text-stroke: 1px white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -266,6 +298,11 @@ p {
         width: 60%;
         margin: 3% 10%;
     }
+
+    .btn-atq {
+        width: 110px;
+        margin: 2% 2% 2%;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -282,9 +319,21 @@ p {
         width: 60%;
         margin: 3% 10%;
     }
+
+    .btn-atq {
+        width: 100px;
+        margin: 2%;
+    }
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 920px) {
+    .btn-atq {
+        width: 100px;
+        margin: 1%;
+    }
+}
+
+@media (max-width: 800px) {
 
     body {
         display: flex;
