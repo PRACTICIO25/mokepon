@@ -42,42 +42,53 @@ body {
     margin: 0 10% 5%;
     font-size: 28pt;
     font-weight: bold;
-    font-family: Arial;
+    font-family: 'Fredoka One', cursive;
     padding: 1%;
     color: black;
     -webkit-text-stroke: 1px white;
 }
 
 .contenedor-btns-atq {
-    width: 90%;
-    display: block;
-    margin: 0 30%;
-}
-
-.separadores {
     width: 100%;
-    height: 50px;
-    margin-bottom: 5%;
+    height: 30vh;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-input[type="radio"] {
-    width: 50px;
-    height: 50px;
+.separadores {
+    width: 30%;
+    height: 30vh;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 255, 0.39);
+    border-radius: 25px;
+    font-size: 18pt;
+    font-weight: bold;
+    font-family: 'Fredoka One', cursive;
+    -webkit-text-stroke: 1px white;
+    cursor: pointer;
 }
 
+.separadores:hover {
+    background-color: rgba(0, 0, 255, 0.514);
+}
 
+.separadores:active {
+    background-color:  rgba(0, 0, 255, 0.514);
+}
 
-label {
-    width: 200px;
-    font-size: 24pt;
-    margin-left: 5%;
-    font-weight: bold;
-    font-family: Arial;
-    color: black;
-    -webkit-text-stroke: 1px white;
+input {
+    display: none;
+    appearance: none;
+}
+
+.imgMoke {
+    width: 90%;
 }
 
 #mascota-jugador, #mascota-enemigo, #mascota-jugador1, #mascota-enemigo1 {
@@ -241,6 +252,22 @@ p {
     background-color: rgba(116, 245, 10, 0.842)
 }
 
+@media (max-width: 1200px) {
+
+    body {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .marco-mascotas {
+        width: 60%;
+        margin: 3% 10%;
+    }
+}
+
 @media (max-width: 1100px) {
 
     body {
@@ -249,6 +276,27 @@ p {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .marco-mascotas {
+        width: 60%;
+        margin: 3% 10%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    body {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .marco-mascotas {
+        width: 70%;
+        margin: 3% 10%;
     }
 }
 
@@ -260,6 +308,7 @@ p {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 0;
     }
 
     .titulo {
@@ -269,8 +318,8 @@ p {
     }
 
     .marco-mascotas {
-        width: 60%;
-        margin: 3% 20%;
+        width: 90%;
+        margin: 3% 5%;
     }
 
     #btn-fuego:hover {
@@ -295,4 +344,49 @@ p {
         margin: 0;
     }
     
+}
+
+@media (max-width: 600px) {
+
+    body {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .marco-mascotas {
+        width: 90%;
+        margin: 3% 5%;
+    }
+
+    .separadores {
+        height: 20vh;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .titulo2 {
+        font-size: 22pt;
+    }
+
+    body {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .marco-mascotas {
+        width: 98%;
+        margin: 3% 1%;
+    }
+
+    .separadores {
+        font-size: 12pt;
+        height: 25vh;
+    }
 }
