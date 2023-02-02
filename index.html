@@ -59,23 +59,25 @@
             <div id="esconderM" class="marco-resultados" hidden>
                 <!-- Mensaje 1 -->
                 <section  class="marco-lucha">
-                    <p>Tu mascota <span id="mascota-jugador1"></span> atacó con <span id="ataque-jugador"></span></p>
-                    <br>
-                    <p>La mascota <span id="mascota-enemigo1"></span> del enemigo atacó con <span id="ataque-enemigo"></span></p>
+                    <div class="inf-lucha">
+                        <p>Tu mascota <span id="mascota-jugador1"></span> atacó con <span id="ataque-jugador"></span></p>
+                    </div>
+                    <div class="inf-lucha">
+                        <p>La mascota <span id="mascota-enemigo1"></span> del enemigo atacó con <span id="ataque-enemigo"></span></p>
+                    </div>
                 </section>
                 <!-- Mensaje 2 -->
                 <section  id="esconderMF" class="marco-acciones">
                     <p id="mensaje"></p>
-                    <br>
                     <b id="atacaN">Ataca nuevamente</b>
                 </section>
             </div>
         </div>
     </div>
     <!-- Botón reiniciar -->
-    <id id="esconderM" class="marco-btn-reiniciar">
+    <div id="esconderM" class="marco-btn-reiniciar">
         <button id="reiniciar" hidden>Reiniciar</button>
-    </id>
+    </div>
     <script src="./js/index.js"></script>
 </body>
 </html>
