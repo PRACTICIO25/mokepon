@@ -6,33 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/index.css">
     <title>Mokepon</title>
-    <script src="./js/index.js"></script>
 </head>
 <body>
     <div class="marco-todo">
         <h1 class="titulo">MOKEPON</h1>
         <section id="seleccionar-mascota" class="marco-mascotas">
             <h2 class="titulo2">Elige tu mascota:</h2>
-                <div class="contenedor-btns-atq">
-                        <input type="radio" name="mascota" id="carmelium">
-                        <label for="carmelium" class="separadores">
-                            <img src="./img/moke1.png" alt="Carmelium" class="imgMoke">
-                            <p>Carmelium</p>
-                        </label>
+            <div class="contenedor-btns-atq">
+                <input type="radio" name="mascota" id="carmelium">
+                <label for="carmelium" class="separadores">
+                    <img src="/img/moke1.png" alt="Carmelium" class="imgMoke">
+                    <p>Carmelium</p>
+                </label>
 
-                    <input type="radio" name="mascota" id="malaquias">
-                    <label for="malaquias" class="separadores">
-                        <img src="./img/moke2.png" alt="Carmelium" class="imgMoke">
-                        <p>Malaquias</p>
-                    </label>
+                <input type="radio" name="mascota" id="malaquias">
+                <label for="malaquias" class="separadores">
+                    <img src="/img/moke2.png" alt="Carmelium" class="imgMoke">
+                    <p>Malaquias</p>
+                </label>
 
-                    <input type="radio" name="mascota" id="conetizon">
-                    <label for="conetizon" class="separadores">
-                        <img src="./img/moke3.png" alt="Carmelium" class="imgMoke">
-                        <p>Conetizon</p>
-                    </label>
-                
-                </div>
+                <input type="radio" name="mascota" id="conetizon">
+                <label for="conetizon" class="separadores">
+                    <img src="/img/moke3.png" alt="Carmelium" class="imgMoke">
+                    <p>Conetizon</p>
+                </label>
+            </div>
             <button id="btn-mascotas" class="seleccionar">Seleccionar</button>
         </section>
         
@@ -45,12 +43,14 @@
                         <p><span id="mascota-jugador"></span></p>
                         <br>
                         <p><span id="vidas-jugador">5</span></p>
+                        <br>
                         <p>vidas.</p>
                     </div>
                     <div class="tarjetas">
                         <p><span id="mascota-enemigo"></span></p>
                         <br>
                         <p><span id="vidas-enemigo">5</span> </p>
+                        <br>
                         <p>vidas.</p>
                     </div>
                 </div>
@@ -78,8 +78,9 @@
         </div>
     </div>
     <!-- Botón reiniciar -->
-    <footer id="esconderM" class="marco-btn-reiniciar">
+    <id id="esconderM" class="marco-btn-reiniciar">
         <button id="reiniciar" hidden>Reiniciar</button>
-    </footer>
+    </id>
+    <script src="./js/index.js"></script>
 </body>
 </html>
