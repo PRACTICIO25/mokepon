@@ -10,9 +10,10 @@ body {
     display: block;
     height: 90vh;
     text-align: center;
-    background-image: url(../img/2244.png);
+    background-image: url(/img/2244.png);
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: border-box;
 }
 
 .marco-todo {
@@ -168,24 +169,19 @@ input:checked + .separadores {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     border: 2px white solid;
+    font-size: 28pt;
+    box-sizing: border-box;
+    line-height: 20px;
 }
 
 #mascota-jugador, #mascota-enemigo {
     font-size: 24pt;
     font-weight: bold;
-    margin: 0 0 2%;
     font-family: 'Fredoka One', cursive;
     color: white;
     -webkit-text-stroke: 2px black;
-}
-
-.marco-resultados {
-    width: 50%;
-    margin: 1%;
-    justify-content: center;
-    align-items: center;
 }
 
 p {
@@ -205,7 +201,7 @@ p {
 }
 
 .btn-atq {
-    width: 120px;
+    width: 25%;
     height: 45px;
     font-size: 12pt;
     color: white;
@@ -238,6 +234,13 @@ p {
 
 #btn-tierra:hover {
     background-color: rgba(117, 207, 75, 0.993);
+}
+
+.marco-resultados {
+    width: 50%;
+    margin: 1%;
+    justify-content: center;
+    align-items: center;
 }
 
 .marco-lucha {
@@ -305,11 +308,26 @@ p {
         width: 60%;
         margin: 3% 10%;
     }
-
-    .btn-atq {
-        width: 110px;
-        margin: 2% 2% 2%;
+    
+    .marco-ataque {
+        width: 60%;
     }
+
+    .imgMoke {
+        width: 70%;
+    }
+
+    .marco-resultados {
+        flex-direction: column;
+    }
+
+    .marco-lucha, .marco-acciones {
+        width: 100%;
+        height: 24vh;
+        margin: 1%;
+        font-size: 12pt;
+    }
+
 }
 
 @media (max-width: 1100px) {
@@ -327,17 +345,45 @@ p {
         margin: 3% 10%;
     }
 
-    .btn-atq {
-        width: 100px;
-        margin: 2%;
+
+    .tarjetas {
+        font-size: 24pt;
+    }
+    
+    #mascota-jugador, #mascota-enemigo {
+        font-size: 28pt;
+    }
+    
+    #vidas-enemigo, #vidas-jugador {
+        font-size: 48pt;
     }
 }
 
-@media (max-width: 920px) {
-    .btn-atq {
-        width: 100px;
-        margin: 1%;
+@media (max-width: 1000px) {
+
+    .titulo-atq {
+        font-size: 24pt;
     }
+
+    .btn-atq {
+        font-size: 14pt;
+    }
+
+}
+
+@media (max-width: 950px) {
+
+    .tarjetas {
+        line-height: 35px;
+    }
+
+    p {
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    
 }
 
 @media (max-width: 800px) {
@@ -354,6 +400,26 @@ p {
         width: 70%;
         margin: 3% 10%;
     }
+
+    #mascota-jugador, #mascota-enemigo {
+        font-size: 22pt;
+    }
+
+    .contenedor-btns-atq {
+        flex-direction: column;
+        box-sizing: border-box;
+        margin: 5% auto 10%;
+    }
+
+    .btn-atq {
+        width: 60%;
+        font-size: 12pt
+    }
+
+    .marco-btn-reiniciar {
+        justify-content: end;
+        margin-right: 5%;
+    }
 }
 
 @media (max-width: 700px) {
@@ -368,14 +434,46 @@ p {
     }
 
     .titulo {
-        margin: 0 5% 0;
+        margin: 0 5% 0%;
         font-size: 46pt;
         -webkit-text-stroke: 1.5px white;
     }
 
+    .titulo-atq {
+        font-size: 24pt;
+        margin-bottom: 1%;
+    }
+
     .marco-mascotas {
         width: 90%;
+        height: 100vh;
         margin: 3% 5%;
+    }
+
+    .separadores {
+        width: 80%;
+        flex-direction: row-reverse;
+        font-size: 26pt;
+    }
+
+    .tarjetas {
+        font-size: 20pt;
+    }
+
+    p {
+        line-height: 20px;
+    }
+    
+    #mascota-jugador, #mascota-enemigo {
+        font-size: 20pt;
+    }
+    
+    #vidas-enemigo, #vidas-jugador {
+        font-size: 48pt;
+    }
+
+    .imgMoke {
+        width: 20%;
     }
 
     #btn-fuego:hover {
@@ -402,7 +500,18 @@ p {
     
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
+    #mascota-jugador, #mascota-enemigo {
+        font-size: 18pt;
+    }
+
+    .btn-atq {
+        font-size: 14pt;
+        width: 60%;
+    }
+}
+
+@media (max-width: 602px) {
 
     body {
         display: flex;
@@ -412,6 +521,10 @@ p {
         align-items: center;
     }
 
+    .titulo-atq {
+        font-size: 20pt;
+    }
+
     .marco-mascotas {
         width: 90%;
         margin: 3% 5%;
@@ -419,6 +532,20 @@ p {
 
     .separadores {
         height: 20vh;
+    }
+
+    #mascota-jugador, #mascota-enemigo {
+        font-size: 18pt;
+    }
+}
+
+@media (max-width: 550px) {
+    .titulo-atq {
+        font-size: 20pt;
+    }
+
+    #mascota-jugador, #mascota-enemigo {
+        font-size: 14pt;
     }
 }
 
@@ -430,10 +557,13 @@ p {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        box-sizing: border-box;
     }
 
     .marco-todo {
         height: 60vh;
+        align-items: center;
+        padding-top: 20%;
     }
 
     .titulo2 {
@@ -441,12 +571,13 @@ p {
     }
 
     .marco-mascotas {
-        width: 98%;
+        width: 90%;
+        height: 90vh;
         margin: 3% 1%;
     }
 
     .separadores {
-        font-size: 12pt;
+        font-size: 24pt;
         height: 25vh;
     }
 
@@ -469,26 +600,97 @@ p {
         height: 20vh;
     }
 
-    .marco-resultados {
-        height: 40vh;
-        block-size: auto;
-        justify-content: center;
-        align-items: center;
-    }
-
     #mascota-jugador, #mascota-enemigo  {
-        font-size: 10pt;
+        font-size: 12pt;
+        line-height: 10px;
     }
 
     #vidas-jugador, #vidas-enemigo {
-        font-size: 36pt;
+        font-size: 28pt;
+        line-height: 10px;
+    }
+
+    p{
+        line-height: 20px;
+    }
+
+    .marco-mensajes {
+        margin-bottom: 3%;
     }
 
     .marco-lucha, .marco-acciones {
         width: 100%;
-        height: 22vh;
+        height: 21vh;
         margin: 1%;
-        font-size: 10pt;
+        font-size: 14pt;
     }
-    
+}
+
+@media (max-width: 400px) {
+
+    .titulo {
+        margin: 5%;
+        font-size: 36pt;
+    }
+
+    .titulo2 {
+        font-size: 20pt;
+        margin: 1%;
+    }
+
+    .titulo-atq {
+        font-size: 14pt;
+    }
+
+    .marco-ataque {
+        width: 50%;
+    }
+
+    .marco-mensaje {
+        width: 100%;
+        margin: 0;
+    }
+
+    .tarjetas {
+        width: 50%;
+        height: 15vh;
+    }
+
+    #mascota-jugador, #mascota-enemigo  {
+        font-size: 10pt;
+        line-height: 10px;
+    }
+
+    .btn-atq {
+        width: 90%;
+    }
+
+    .marco-lucha, .marco-acciones {
+        width: 100%;
+        height: 18vh;
+        margin: 1%;
+        font-size: 14pt;
+    }
+
+    .marco-btn-reiniciar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 300px) {
+
+    .separadores {
+        font-size: 16pt;
+        height: 25vh;
+    }
+
+    .titulo {
+        margin-top: 20%;
+        font-size: 24pt;
+    }
+
+    .titulo2 {
+        font-size: 14pt;
+        margin: 1%;
+    }
 }
