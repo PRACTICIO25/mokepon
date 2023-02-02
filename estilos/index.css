@@ -87,13 +87,13 @@ body {
     background-color: rgba(0, 0, 255, 0.514);
 }
 
-.separadores:active {
-    background-color:  rgba(0, 0, 255, 0.514);
-}
-
 input {
     display: none;
     appearance: none;
+}
+
+input:checked + .separadores {
+    background-color:  rgba(0, 0, 255, 0.726);
 }
 
 .imgMoke {
