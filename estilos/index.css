@@ -10,7 +10,7 @@ body {
     display: block;
     height: 90vh;
     text-align: center;
-    background-image: url(../img/2244.png);
+    background-image: url(/img/2244.png);
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
@@ -177,7 +177,7 @@ input:checked + .separadores {
 }
 
 .inf-tarjetas {
-    line-height: 40px;
+    line-height: .8;
 }
 
 #mascota-jugador, #mascota-enemigo {
@@ -198,6 +198,7 @@ p {
     font-family: 'Fredoka One', cursive;
     color: white;
     -webkit-text-stroke: 2px black;
+    line-height: 1;
 }
 
 .marco-btns-atq {
@@ -253,7 +254,6 @@ p {
     background-color: rgba(124, 56, 0, 0.651);
     margin: 2%;
     margin-left: 0;
-    padding: 4% 2%;
     font-size: 16pt;
     font-family: 'Fredoka One', cursive;
     color: black;
@@ -262,6 +262,13 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.inf-lucha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
 }
 
 .marco-acciones {
@@ -519,6 +526,11 @@ p {
         justify-content: center;
         align-items: center;
     }
+    
+    .marco-todo {
+        height: 80vh;
+        align-items: flex-end;
+    }
 
     .titulo-atq {
         font-size: 20pt;
@@ -560,7 +572,7 @@ p {
     }
 
     .marco-todo {
-        height: 60vh;
+        height: 70vh;
         align-items: center;
         padding-top: 20%;
     }
@@ -618,16 +630,22 @@ p {
     .marco-lucha, .marco-acciones {
         width: 100%;
         height: 21vh;
-        margin: 1%;
+        padding: 1%;
         font-size: 14pt;
     }
+
 }
 
 @media (max-width: 400px) {
 
+    .marco-todo {
+        height: 70vh;
+        padding-top: 0;
+    }
+
     .titulo {
-        margin: 5%;
         font-size: 36pt;
+        margin-bottom: 3%;
     }
 
     .titulo2 {
@@ -669,6 +687,7 @@ p {
     }
 
     p {
+        font-size: 12pt;
         line-height: 20px;
     }
 
@@ -694,3 +713,4 @@ p {
         margin: 1%;
     }
 }
+
