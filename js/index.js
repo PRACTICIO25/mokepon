@@ -5,8 +5,6 @@ function cargarJuego() {
     let vidasJugador = 5;
     let selMJ;
     let selME;
-    
-    alert("Ancho: " + screen.width + " Alto: " + screen.height)
 
     function seleccionarMascotaJugador() {
 
@@ -244,6 +242,8 @@ function cargarJuego() {
 
     }
 
+    
+    alert("Ancho: " + screen.width + " Alto: " + screen.height)
 
     let btnMascotaJugador = document.getElementById("btn-mascotas");
     btnMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
