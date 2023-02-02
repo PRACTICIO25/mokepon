@@ -5,6 +5,8 @@ function cargarJuego() {
     let vidasJugador = 5;
     let selMJ;
     let selME;
+    
+    alert("Ancho: " + screen.width + " Alto: " + screen.height)
 
     function seleccionarMascotaJugador() {
 
