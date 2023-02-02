@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos/index.css">
+    <link rel="stylesheet" href="/estilos/index.css">
     <title>Mokepon</title>
 </head>
 <body>
@@ -15,19 +15,19 @@
             <div class="contenedor-btns-atq">
                 <input type="radio" name="mascota" id="carmelium">
                 <label for="carmelium" class="separadores">
-                    <img src="./img/moke1.png" alt="Carmelium" class="imgMoke">
+                    <img src="/img/moke1.png" alt="Carmelium" class="imgMoke">
                     <p>Carmelium</p>
                 </label>
 
                 <input type="radio" name="mascota" id="malaquias">
                 <label for="malaquias" class="separadores">
-                    <img src="./img/moke2.png" alt="Carmelium" class="imgMoke">
+                    <img src="/img/moke2.png" alt="Carmelium" class="imgMoke">
                     <p>Malaquias</p>
                 </label>
 
                 <input type="radio" name="mascota" id="conetizon">
                 <label for="conetizon" class="separadores">
-                    <img src="./img/moke3.png" alt="Carmelium" class="imgMoke">
+                    <img src="/img/moke3.png" alt="Carmelium" class="imgMoke">
                     <p>Conetizon</p>
                 </label>
             </div>
@@ -40,18 +40,14 @@
                 <h2 class="titulo-atq">Elige tu ataque:</h2>
                 <div class="marco-mensaje">
                     <div class="tarjetas">
-                        <p><span id="mascota-jugador"></span></p>
-                        <br>
-                        <p><span id="vidas-jugador">5</span></p>
-                        <br>
-                        <p>vidas.</p>
+                        <p class="inf-tarjetas"><span id="mascota-jugador"></span></p>
+                        <p class="inf-tarjetas"><span id="vidas-jugador">5</span></p>
+                        <p class="inf-tarjetas">vidas.</p>
                     </div>
                     <div class="tarjetas">
-                        <p><span id="mascota-enemigo"></span></p>
-                        <br>
-                        <p><span id="vidas-enemigo">5</span> </p>
-                        <br>
-                        <p>vidas.</p>
+                        <p class="inf-tarjetas"><span id="mascota-enemigo"></span></p>
+                        <p class="inf-tarjetas"><span id="vidas-enemigo">5</span></p>
+                        <p class="inf-tarjetas">vidas.</p>
                     </div>
                 </div>
                 <div class="marco-btns-atq">
@@ -70,7 +66,6 @@
                 <!-- Mensaje 2 -->
                 <section  id="esconderMF" class="marco-acciones">
                     <p id="mensaje"></p>
-                    <br>
                     <br>
                     <b id="atacaN">Ataca nuevamente</b>
                 </section>
