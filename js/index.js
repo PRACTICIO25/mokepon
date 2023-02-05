@@ -455,9 +455,14 @@ function cargarJuego() {
                     mensaje.innerHTML = "¡Perdiste la batalla!... <b>¡El enemigo gana!</b> 😭😭😭";
                     ataqueN.textContent = "Reinicia el juego";
                 }
-                else {
+                else if (vidasJugador > vidasEnemigo){
                     mostrarMensajes.style.backgroundColor = "green";
                     mensaje.innerHTML = "¡Felicitaciones, <b>has ganado la batalla!</b> 🥳🥳🥳";
+                    ataqueN.textContent = "Reinicia el juego";
+                }
+                else {
+                    mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
+                    mensaje.innerHTML = "¡Que batalla, <b>se ha dado un empate!</b> 🥳🥳🥳";
                     ataqueN.textContent = "Reinicia el juego";
                 }
             }
