@@ -12,24 +12,8 @@
         <h1 class="titulo">MOKEPON</h1>
         <section id="seleccionar-mascota" class="marco-mascotas">
             <h2 class="titulo2">Elige tu mascota:</h2>
-            <div class="contenedor-btns-atq">
-                <input type="radio" name="mascota" id="carmelium">
-                <label for="carmelium" class="separadores">
-                    <img src="./img/moke1.png" alt="Carmelium" class="imgMoke">
-                    <p>Carmelium</p>
-                </label>
-
-                <input type="radio" name="mascota" id="malaquias">
-                <label for="malaquias" class="separadores">
-                    <img src="./img/moke2.png" alt="Carmelium" class="imgMoke">
-                    <p>Malaquias</p>
-                </label>
-
-                <input type="radio" name="mascota" id="conetizon">
-                <label for="conetizon" class="separadores">
-                    <img src="./img/moke3.png" alt="Carmelium" class="imgMoke">
-                    <p>Conetizon</p>
-                </label>
+            <div id="contenedor-mokepones" class="contenedor-btns-atq">
+                
             </div>
             <button id="btn-mascotas" class="seleccionar">Seleccionar</button>
         </section>
@@ -40,20 +24,18 @@
                 <h2 class="titulo-atq">Elige tu ataque:</h2>
                 <div class="marco-mensaje">
                     <div class="tarjetas">
-                        <p class="inf-tarjetas"><span id="mascota-jugador"></span></p>
-                        <p class="inf-tarjetas"><span id="vidas-jugador">5</span></p>
-                        <p class="inf-tarjetas">vidas.</p>
+                        <p class="inf-tarjetas"><span class="mascotajugador" id="mascota-jugador"></span></p>
+                        <p class="inf-tarjetas"><span class="vidasjugador" id="vidas-jugador">0</span></p>
+                        <p class="inf-tarjetas">victorias</p>
                     </div>
                     <div class="tarjetas">
-                        <p class="inf-tarjetas"><span id="mascota-enemigo"></span></p>
-                        <p class="inf-tarjetas"><span id="vidas-enemigo">5</span></p>
-                        <p class="inf-tarjetas">vidas.</p>
+                        <p class="inf-tarjetas"><span class="mascotaenemigo" id="mascota-enemigo"></span></p>
+                        <p class="inf-tarjetas"><span class="vidasenemigo" id="vidas-enemigo">0</span></p>
+                        <p class="inf-tarjetas">victorias</p>
                     </div>
                 </div>
-                <div class="marco-btns-atq">
-                    <button id="btn-fuego" class="btn-atq" disabled>Fuego 🔥</button>
-                    <button id="btn-agua" class="btn-atq" disabled>Agua 💧</button>
-                    <button id="btn-tierra" class="btn-atq" disabled>Tierra 🌱</button>
+                <div id="btns-ataque" class="marco-btns-atq">
+                    
                 </div>
             </section>
             <div id="esconderM" class="marco-resultados" hidden>
