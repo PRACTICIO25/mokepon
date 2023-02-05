@@ -275,6 +275,7 @@ function cargarJuego() {
 
         botones.forEach((boton) => {
             function validarResolucion() {
+                mostrarMensajes.backgroundColor = "none";
                 if (screen.width < 1200) {
                     mostrarMensajes.style.display = "block";
                 }
