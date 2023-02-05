@@ -8,6 +8,7 @@ function cargarJuego() {
 
     const ataqueJugador = document.getElementById("ataque-jugador");
     const mostrarMensajes = document.getElementById("esconderM");
+    const mostrarMF = document.getElementById("esconderMF");
     const mascotaJugador = document.getElementById("mascota-jugador1");
     const mascotaEnemigo = document.getElementById("mascota-enemigo1");
 
@@ -402,22 +403,22 @@ function cargarJuego() {
 
     function comparacionAtaques(ganador,perdedor){
         
-        let mostrarMensajes = document.getElementById("esconderMF");
+        let mostrarMF = document.getElementById("esconderMF");
         procesarLucha(ganador)
         console.log("gana" + pt)
         if (pt === 1) {
-            mostrarMensajes.style.backgroundColor = "green";
+            mostrarMF.style.backgroundColor = "green";
             mensaje.textContent = "¡La mascota del enemigo a recibido daño! 💪💪💪";
             vidasJugador++;
         }else {
-            procesarLucha(perdedor);
+            mostrarMF(perdedor);
             console.log("gana" + pt)
             if (pt === 1) {
-                mostrarMensajes.style.backgroundColor = "red";
+                mostrarMF.style.backgroundColor = "red";
                 mensaje.textContent = "¡Tu mascota a recibido daño! 💥💥💥";
                 vidasEnemigo++;
             }else {
-                mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
+                mostrarMF.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
                 mensaje.textContent = "No se produce daño en los jugadores 🙈🙈🙈";
             }
         }
@@ -451,17 +452,17 @@ function cargarJuego() {
             vE.textContent = vidasEnemigo;
             function resultados(){
                 if (vidasJugador < vidasEnemigo) {
-                    mostrarMensajes.style.backgroundColor = "red";
+                    mostrarMF.style.backgroundColor = "red";
                     mensaje.innerHTML = "¡Perdiste la batalla!... <b>¡El enemigo gana!</b> 😭😭😭";
                     ataqueN.textContent = "Reinicia el juego";
                 }
                 else if (vidasJugador > vidasEnemigo){
-                    mostrarMensajes.style.backgroundColor = "green";
+                    mostrarMF.style.backgroundColor = "green";
                     mensaje.innerHTML = "¡Felicitaciones, <b>has ganado la batalla!</b> 🥳🥳🥳";
                     ataqueN.textContent = "Reinicia el juego";
                 }
                 else {
-                    mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
+                    mostrarMF.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
                     mensaje.innerHTML = "¡Que batalla, <b>se ha dado un empate!</b> 🥳🥳🥳";
                     ataqueN.textContent = "Reinicia el juego";
                 }
