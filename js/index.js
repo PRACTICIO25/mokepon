@@ -120,36 +120,36 @@ function cargarJuego() {
         }
     }
 
-    let mokeAnturium = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeBasilius = new Mokepon('Basilius', '../img/basilius.png', 5);
-    let mokeBomper = new Mokepon('Bomper', '../img/bomper.png', 5);
-    let mokeBretus = new Mokepon('Bretus', '../img/bretus.png', 5)
-    let mokeCanenuto = new Mokepon('Canenuto', '../img/canenuto.png', 5)
-    let mokeCliptus = new Mokepon('Cliptus', '../img/cliptus.png', 5);
-    let mokeDracunius = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeEnergor = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeFleppo = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeFlopper = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeFonson = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeHolgon = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeJounjo = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeManson = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeMinus = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeMortum = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeMurdor = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeNavegris = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokePlesium = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeRomron = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeSobrian = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeSolver = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeSulgun = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeTobias = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeVolmer = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeYegoto = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeYohoo = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeYompler = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeZooter = new Mokepon('Anturium', '../img/anturium.png', 5);
-    let mokeZoripon = new Mokepon('Anturium', '../img/anturium.png', 5);
+    let mokeAnturium = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeBasilius = new Mokepon('Basilius', './img/basilius.png', 5);
+    let mokeBomper = new Mokepon('Bomper', './img/bomper.png', 5);
+    let mokeBretus = new Mokepon('Bretus', './img/bretus.png', 5)
+    let mokeCanenuto = new Mokepon('Canenuto', './img/canenuto.png', 5)
+    let mokeCliptus = new Mokepon('Cliptus', './img/cliptus.png', 5);
+    let mokeDracunius = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeEnergor = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeFleppo = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeFlopper = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeFonson = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeHolgon = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeJounjo = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeManson = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeMinus = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeMortum = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeMurdor = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeNavegris = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokePlesium = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeRomron = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeSobrian = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeSolver = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeSulgun = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeTobias = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeVolmer = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeYegoto = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeYohoo = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeYompler = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeZooter = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeZoripon = new Mokepon('Anturium', './img/anturium.png', 5);
 
     /* ATAQUES:
     {nombre: 'Tierra 🌱', id: 'btn-tierra'},
