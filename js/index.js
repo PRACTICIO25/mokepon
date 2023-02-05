@@ -2,18 +2,11 @@ function cargarJuego() {
     const mostrarAtaque = document.getElementById("esconderA");
     const mostrarTitulo = document.getElementById("seleccionar-mascota");
     const mostrarReiniciar = document.getElementById("reiniciar");
-    const carmelium = document.getElementById("carmelium");
-    const malaquias = document.getElementById("malaquias");
-    const conetizon = document.getElementById("conetizon");
     const seleccionJ = document.getElementById("mascota-jugador");
 
     const seleccionE = document.getElementById("mascota-enemigo");
-    const ataqueAleatorio = numeroMaxMin(1,3);
 
     const ataqueJugador = document.getElementById("ataque-jugador");
-    const btnFuego = document.getElementById("btn-fuego");
-    const btnAgua = document.getElementById("btn-agua");
-    const btnTierra = document.getElementById("btn-tierra");
     const mostrarMensajes = document.getElementById("esconderM");
     const mascotaJugador = document.getElementById("mascota-jugador1");
     const mascotaEnemigo = document.getElementById("mascota-enemigo1");
@@ -29,31 +22,209 @@ function cargarJuego() {
     const btnMascotaJugador = document.getElementById("btn-mascotas");
     const btnReiniciar = document.getElementById("reiniciar");
 
-    
+    const contenedorMokepones = document.getElementById("contenedor-mokepones")
+    const btnsAtaque = document.getElementById("btns-ataque");
+
+    let mokepones = [];
+    let atqJugador = [];
+    let atqEnemigo = [];
+    let atqEnemigoSel = [];
     let atqj;
     let atqE;
-    let vidasEnemigo = 5;
-    let vidasJugador = 5;
+    let opcionMokepones;
+    let anturium;
+    let basilius;
+    let bomper;
+    let bretus;
+    let canenuto;
+    let cliptus;
+    let dracunius;
+    let energor;
+    let fleppo;
+    let flopper;
+    let fonson;
+    let holgon;
+    let jounjo;
+    let manson;
+    let minus;
+    let mortum;
+    let murdor;
+    let navegris;
+    let plesium;
+    let romron;
+    let sobrian;
+    let solver;
+    let sulgun;
+    let tobias;
+    let volmer;
+    let yegoto;
+    let yohoo;
+    let yompler;
+    let zooter;
+    let zoripon;
+    let vidasEnemigo = 0;
+    let vidasJugador = 0;
     let selMJ;
+    let seleccionME;
+    let indexAtaqueJugador;
+    let indexAtaqueEnemigo;
     let selME;
+    let btnFuego;
+    let btnAgua;
+    let btnTierra;
+    let botones = [];
+    let botonesMascotas = [];
+    let deshabilitar;
+    let pt;
+    let click = 0;
+    let pierdeFuego = ["AGUA", "HIELO"];
+    let ganaFuego = ["AIRE", "METAL","RAYO"];
+    let pierdeAgua = ["TIERRA","METAL","RAYO"];
+    let ganaAgua = ["FUEGO", "AIRE"];
+    let pierdeTierra = ["RAYO", "METAL", "AIRE"];
+    let ganaTierra = ["AGUA", "HIELO"];
+    let pierdeRayo = ["AIRE", "FUEGO"];
+    let ganaRayo = ["TIERRA", "AGUA", "HIELO", "METAL"];
+    let pierdeAire = ["FUEGO", "AGUA", "HIELO"];
+    let ganaAire = ["RAYO", "TIERRA", "METAL"];
+    let pierdeMetal = ["FUEGO", "RAYO", "AIRE"];
+    let ganaMetal = ["AGUA", "TIERRA", "HIELO"];
+    let pierdeHielo = ["TIERRA", "METAL", "RAYO"];
+    let ganaHielo = ["FUEGO", "AIRE"];
+    
+
+    /* logica de lucha
+    Elementales:
+
+    FUEGO: Pierde contra AGUA, HIELO,  y gana contra AIRE, METAL, RAYO
+
+    AGUA: Pierde contra TIERRA, METAL, RAYO y gana contra FUEGO, AIRE
+
+    TIERRA: Pierde contra RAYO, METAL, AIRE y gana contra AGUA, HIELO
+
+    RAYO: Pierda contra AIRE, FUEGO y gana contra TIERRA, AGUA, HIELO, METAL
+
+    AIRE: Pierda contra FUEGO, AGUA, HIELO y gana contra RAYO, TIERRA, METAL
+
+    METAL: Pierda contra FUEGO, RAYO, AIRE y gana contra AGUA, TIERRA, HIELO
+
+    HIELO: Pierde contra TIERRA, METAL, RAYO y gana contra FUEGO, AIRE
+    */
+
+    class Mokepon {
+        constructor (nombre, imagen, vida) {
+            this.nombre = nombre;
+            this.imagen = imagen;
+            this.vida = vida;
+            this.ataques = [];
+        }
+    }
+
+    let mokeAnturium = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeBasilius = new Mokepon('Basilius', './img/basilius.png', 5);
+    let mokeBomper = new Mokepon('Bomper', './img/bomper.png', 5);
+    let mokeBretus = new Mokepon('Bretus', './img/bretus.png', 5)
+    let mokeCanenuto = new Mokepon('Canenuto', '/.img/canenuto.png', 5)
+    let mokeCliptus = new Mokepon('Cliptus', '/.img/cliptus.png', 5);
+    let mokeDracunius = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeEnergor = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeFleppo = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeFlopper = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeFonson = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeHolgon = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeJounjo = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeManson = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeMinus = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeMortum = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeMurdor = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeNavegris = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokePlesium = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeRomron = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeSobrian = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeSolver = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeSulgun = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeTobias = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeVolmer = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeYegoto = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeYohoo = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeYompler = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeZooter = new Mokepon('Anturium', './img/anturium.png', 5);
+    let mokeZoripon = new Mokepon('Anturium', './img/anturium.png', 5);
+
+    /* ATAQUES:
+    {nombre: 'Tierra 🌱', id: 'btn-tierra'},
+    {nombre: 'Metal 🦾', id: 'btn-metal'},
+    {nombre: 'Aire 🌪️', id: 'btn-aire'},
+    {nombre: 'Agua 💧', id: 'btn-agua'},
+    {nombre: 'Hielo 🧊', id: 'btn-hielo'},
+    {nombre: 'Fuego 🔥', id: 'btn-fuego'},
+    {nombre: 'Rayo ⚡', id: 'btn-rayo'}, */
+
+    mokeAnturium.ataques.push(
+        {nombre: 'Hielo 🧊', id: 'btn-hielo'},
+        {nombre: 'Agua 💧', id: 'btn-agua'},
+        {nombre: 'Metal 🦾', id: 'btn-metal'},
+    )
+
+    mokeBasilius.ataques.push(
+        {nombre: 'Hielo 🧊', id: 'btn-hielo'},
+        {nombre: 'Metal 🦾', id: 'btn-metal'},
+        {nombre: 'Aire 🌪️', id: 'btn-aire'},
+    )
+
+    mokeBomper.ataques.push(
+        {nombre: 'Fuego 🔥', id: 'btn-fuego'},
+        {nombre: 'Rayo ⚡', id: 'btn-rayo'},
+        {nombre: 'Metal 🦾', id: 'btn-metal'},
+    )
+
+    mokeBretus.ataques.push(
+        {nombre: 'Fuego 🔥', id: 'btn-fuego'},
+        {nombre: 'Metal 🦾', id: 'btn-metal'},
+        {nombre: 'Aire 🌪️', id: 'btn-aire'},
+        {nombre: 'Tierra 🌱', id: 'btn-tierra'},
+    )
+
+    mokeCanenuto.ataques.push(
+        {nombre: 'Agua 💧', id: 'btn-agua'},
+        {nombre: 'Metal 🦾', id: 'btn-metal'},
+        {nombre: 'Rayo ⚡', id: 'btn-rayo'},
+    )
+
+    mokeCliptus.ataques.push(
+        {nombre: 'Tierra 🌱', id: 'btn-tierra'},
+        {nombre: 'Metal 🦾', id: 'btn-metal'},
+        {nombre: 'Aire 🌪️', id: 'btn-aire'},
+    )
+
+    mokepones.push(mokeAnturium,mokeBasilius,mokeBomper,mokeBretus,mokeCanenuto,mokeCliptus)
+
+    mokepones.forEach((mokepon) => {
+        opcionMokepones = `
+        <input type="radio" name="mascota" id=${mokepon.nombre}>
+        <label for=${mokepon.nombre} class="separadores">
+            <img src=${mokepon.imagen} alt=${mokepon.nombre} class="imgMoke">
+            <p>${mokepon.nombre}</p>
+        </label>
+        `;
+        contenedorMokepones.innerHTML += opcionMokepones;
+        anturium = document.getElementById("Anturium");
+        basilius = document.getElementById("Basilius");
+        bomper = document.getElementById("Bomper");
+        bretus = document.getElementById("Bretus")
+        canenuto = document.getElementById("Canenuto")
+        cliptus = document.getElementById("Cliptus")
+    })
 
     function seleccionarMascotaJugador() {
-        
-        if (carmelium.checked) {
-            selMJ = "Carmelium";
-            seleccionJ.textContent = "Carmelium";
+        botonesMascotas = document.querySelector('input[name="mascota"]:checked');
+
+        if (botonesMascotas) {
+            seleccionJ.textContent = botonesMascotas.id;
+            selMJ = botonesMascotas.id;
         }
-        else if (malaquias.checked) {
-            selMJ = "Malaquias";
-            seleccionJ.textContent = "Malaquias";
-        }
-        else if (conetizon.checked) {
-            selMJ = "Conetizon";
-            seleccionJ.textContent = "Conetizon";
-        }
-        else {
-            alert("Selecciona una mascota");
-            return cargarJuego()
+        else if (botonesMascotas === null) {
+            return alert("Selecciona una mascota");
         }
 
         mostrarReiniciar.style.display = "block";
@@ -61,196 +232,245 @@ function cargarJuego() {
         btnMascotaJugador.disabled = true;
         mostrarTitulo.style.display = "none";
 
-        seleccionarMascotaEnemigo()
+        extrarAtaques(selMJ);
 
+        seleccionarMascotaEnemigo();
+
+    }
+
+    function extrarAtaques(selMJ) {
+        let ataques;
+        for (let i = 0; i < mokepones.length; i++) {
+            if (selMJ === mokepones[i].nombre) {
+                ataques = mokepones[i].ataques;
+            }
+            
+        }
+        mostrarAtaques(ataques);
+    }
+
+    function mostrarAtaques(ataques) {
+
+        for (let i = 0; i < 4; i++) {
+            let ataquesAleatorios = aleatorio(0,ataques.length - 1);
+            console.log(ataquesAleatorios)
+            atqj = `
+                <button id=${ataques[ataquesAleatorios].id} class="btn-atq BAtaque">${ataques[ataquesAleatorios].nombre}</button>
+                `;
+                btnsAtaque.innerHTML += atqj;
+                btnFuego = document.getElementById("btn-fuego");
+                btnTierra = document.getElementById("btn-tierra");
+                btnAgua = document.getElementById("btn-agua");
+                botones = document.querySelectorAll('.BAtaque')
+            console.log(i)
+        }
+        console.log("=> " + ataques)
+    }
+
+    function secuenciaAtaque() {
+
+        mascotaJugador.textContent = selMJ;
+        mascotaEnemigo.textContent = seleccionME;
+
+        botones.forEach((boton) => {
+            function validarResolucion() {
+                if (screen.width < 1200) {
+                    mostrarMensajes.style.display = "block";
+                }
+                else {
+                    mostrarMensajes.style.display = "flex";
+                }
+            }
+            
+            boton.addEventListener("click", (e) => {
+                click++;
+                let ataqueClickJugador = e.target.textContent;
+                document.getElementById(boton.id).classList.add = "deshabilitar";
+                boton.style.backgroundColor = "rgba(163, 141, 141, 0.993)";
+                boton.disabled = true
+                let idJ = "jugador"
+
+                selAtaque(ataqueClickJugador,idJ)
+                validarResolucion()
+                seleccionarAtaqueEnemigo();
+            })
+        })
+        console.log(botones)
     }
 
     function seleccionarMascotaEnemigo() {
-        
-        switch (ataqueAleatorio) {
-            case 1:
-                selME = "Carmelium";
-                seleccionE.textContent = "Carmelium";
-                break;
-
-            case 2:
-                selME = "Malaquias";
-                seleccionE.textContent = "Malaquias";
-                break;
-
-            case 3:
-                selME = "Conetizon";
-                seleccionE.textContent = "Conetizon"
-                break;
-        }
-        
-        seleccionarAtaque();
-
+        selME = aleatorio(0,mokepones.length-1);
+        console.log(selME)
+        atqEnemigo = mokepones[selME].ataques;
+        console.log(atqEnemigo)
+        seleccionME = mokepones[selME].nombre;
+        seleccionE.textContent = mokepones[selME].nombre;
+        secuenciaAtaque();
     }
 
-    function numeroMaxMin(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
+    function selAtaque(ataque,identificador) {
+
+        if (ataque === 'Fuego 🔥') {
+            if (identificador === "jugador") {
+                atqJugador = "FUEGO";
+                ataqueJugador.textContent = atqJugador;
+            }else if (identificador === "enemigo") {
+                atqEnemigoSel = "FUEGO";
+                ataqueEnemigo.textContent = atqEnemigoSel;
+            }
+            
+        }else if (ataque === 'Agua 💧') {
+            if (identificador === "jugador") {
+                atqJugador = "AGUA";
+                ataqueJugador.textContent = atqJugador
+            }else if (identificador === "enemigo") {
+                atqEnemigoSel = "AGUA";
+                ataqueEnemigo.textContent = atqEnemigoSel
+            }
+
+        }else if (ataque === 'Aire 🌪️') {
+            if (identificador === "jugador") {
+                atqJugador = "AIRE";
+                ataqueJugador.textContent = atqJugador;
+            }else if (identificador === "enemigo") {
+                atqEnemigoSel = "AIRE";
+                ataqueEnemigo.textContent = atqEnemigoSel
+            }
+        
+        }else if (ataque === 'Metal 🦾') {
+            if (identificador === "jugador") {
+                atqJugador = "METAL";
+                ataqueJugador.textContent = atqJugador;
+            }else if (identificador === "enemigo") {
+                atqEnemigoSel = "METAL";
+                ataqueEnemigo.textContent = atqEnemigoSel
+            }
+
+        }else if (ataque === 'Hielo 🧊') {
+            if (identificador === "jugador") {
+                atqJugador = "HIELO";
+                ataqueJugador.textContent = atqJugador;
+            }else if (identificador === "enemigo") {
+                atqEnemigoSel = "HIELO";
+                ataqueEnemigo.textContent = atqEnemigoSel
+            }
+
+        }else {
+            if (identificador === "jugador") {
+                atqJugador = "TIERRA";
+                ataqueJugador.textContent = atqJugador;
+            }else if (identificador === "enemigo") {
+                atqEnemigoSel = "TIERRA";
+                ataqueEnemigo.textContent = atqEnemigoSel
+            }
+        }
     }
 
-    function seleccionarAtaque() {
+    function seleccionarAtaqueEnemigo() {
+        let ataqueAleatorio = aleatorio(0,atqEnemigo.length - 1)
 
-        mascotaJugador.textContent = selMJ;
-        mascotaEnemigo.textContent = selME;
-
-        btnAgua.disabled = false;
-        btnFuego.disabled = false;
-        btnTierra.disabled = false;
-
-        btnFuego.addEventListener("click", () => {
-            if (screen.width < 1200) {
-                mostrarMensajes.style.display = "block";
+        for (let a = 0; a < atqEnemigo.length; a++) {
+            if (atqEnemigo[a] == atqEnemigo[ataqueAleatorio]) {
+                idE = "enemigo";
+                console.log("ataque enemigo: " + atqEnemigo[a].nombre )
+                selAtaque(atqEnemigo[a].nombre,idE)
             }
-            else {
-                mostrarMensajes.style.display = "flex";
-            }
-            ataqueJugador.textContent = "FUEGO";
-            atqj = "fuego";
-            seleccionarAtaqueEnemigo();
-        })
-
-        btnAgua.addEventListener("click", () => {
-            if (screen.width < 700) {
-                mostrarMensajes.style.display = "block";
-            }
-            else {
-                mostrarMensajes.style.display = "flex";
-            }
-            ataqueJugador.textContent = "AGUA";
-            atqj = "agua";
-            seleccionarAtaqueEnemigo();
-        })
-
-        btnTierra.addEventListener("click", () => {
-            if (screen.width < 700) {
-                mostrarMensajes.style.display = "block";
-            }
-            else {
-                mostrarMensajes.style.display = "flex";
-            }
-            ataqueJugador.textContent = "TIERRA";
-            atqj = "tierra";
-            seleccionarAtaqueEnemigo();
-        })
-
-        function seleccionarAtaqueEnemigo() {
-            let ataqueAleatorio = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-
-            switch (ataqueAleatorio) {
-                case 1:
-                    atqE = "fuego";
-                    ataqueEnemigo.textContent = "FUEGO";
-                    break;
-
-                case 2:
-                    atqE = "agua";
-                    ataqueEnemigo.textContent = "AGUA";
-                    break;
-
-                case 3:
-                    atqE = "tierra"
-                    ataqueEnemigo.textContent = "TIERRA";
-                    break;
-            }
-
-            lucha();
-
-        }
-
-        function lucha() {
-            let mostrarMensajes = document.getElementById("esconderMF");
-    
-
-            if (atqj.toLowerCase() == "fuego" && atqE.toLowerCase() == "fuego") {
-                mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
-                mensaje.textContent = "No se produce daño en los jugadores 🙈🙈🙈";
-            }
-            else if (atqj.toLowerCase() == "fuego" && atqE.toLowerCase() == "agua") {
-                mostrarMensajes.style.backgroundColor = "red";
-                mensaje.textContent = "¡Tu mascota a recibido daño! 💥💥💥";
-                vidasJugador--;
-            }
-            else if (atqj.toLowerCase() == "fuego" && atqE.toLowerCase() == "tierra") {
-                mostrarMensajes.style.backgroundColor = "green";
-                mensaje.textContent = "¡La mascota del enemigo a recibido daño! 💪💪💪";
-                vidasEnemigo--;
-            }
-
-            else if (atqj.toLowerCase() == "agua" && atqE.toLowerCase() == "fuego") {
-                mostrarMensajes.style.backgroundColor = "green";
-                mensaje.textContent = "¡La mascota del enemigo a recibido daño! 💪💪💪";
-                vidasEnemigo--;
-            }
-            else if (atqj.toLowerCase() == "agua" && atqE.toLowerCase() == "agua") {
-                mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
-                mensaje.textContent = "No se produce daño en los jugadores 🙈🙈🙈";
-            }
-            else if (atqj.toLowerCase() == "agua" && atqE.toLowerCase() == "tierra") {
-                mostrarMensajes.style.backgroundColor = "red";
-                mensaje.textContent = "¡Tu mascota a recibido daño! 💥💥💥";
-                vidasJugador--;
-            }
-
-            else if (atqj.toLowerCase() == "tierra" && atqE.toLowerCase() == "fuego") {
-                mostrarMensajes.style.backgroundColor = "red";
-                mensaje.textContent = "¡Tu mascota a recibido daño! 💥💥💥";
-                vidasJugador--;
-            }
-            else if (atqj.toLowerCase() == "tierra" && atqE.toLowerCase() == "agua") {
-                mostrarMensajes.style.backgroundColor = "green";
-                mensaje.textContent = "¡La mascota del enemigo a recibido daño! 💪💪💪";
-                vidasEnemigo--;
-            }
-            else if (atqj.toLowerCase() == "tierra" && atqE.toLowerCase() == "tierra") {
-                mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
-                mensaje.textContent = "No se produce daño en los jugadores 🙈🙈🙈";
-            }
-
-            comprobarVidas();
             
         }
 
-        function comprobarVidas() {
-
-            if (vidasJugador <= 0) {
-                vJ.textContent = vidasJugador;
-                vE.textContent = vidasEnemigo;
-                mensaje.innerHTML = "¡Perdiste la batalla!... <b>¡El enemigo gana!</b> 😭😭😭";
-                ataqueN.textContent = "Reinicia el juego";
-
-                btnAgua.style.backgroundColor = "rgb(128, 128, 128)";
-                btnAgua.disabled = true;
-                btnFuego.style.backgroundColor = "rgb(128, 128, 128)";
-                btnFuego.disabled = true;
-                btnTierra.style.backgroundColor = "rgb(128, 128, 128)";
-                btnTierra.disabled = true;
-            }
-            else if (vidasEnemigo == 0) {
-                vJ.textContent = vidasJugador;
-                vE.textContent = vidasEnemigo;
-                mensaje.innerHTML = "¡Felicitaciones, <b>has ganado la batalla!</b> 🥳🥳🥳";
-                ataqueN.textContent = "Reinicia el juego";
-
-                btnAgua.style.backgroundColor = "rgb(128, 128, 128)";
-                btnAgua.disabled = true;
-                btnFuego.style.backgroundColor = "rgb(128, 128, 128)";
-                btnFuego.disabled = true;
-                btnTierra.style.backgroundColor = "rgb(128, 128, 128)";
-                btnTierra.disabled = true;
-            }
-            else {
-                vJ.textContent = vidasJugador;
-                vE.textContent = vidasEnemigo;
-            }
-        }
+        console.log(atqEnemigoSel + " " + atqJugador)
+        lucha();
 
     }
 
-    alert("Ancho: " + screen.width + " Alto: " + screen.height)
+    function aleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function procesarLucha(v1) {
+        for (let g = 0; g < v1.length; g++) {
+            console.log("aqui" + v1[g]);
+            if (atqEnemigoSel !== v1[g]) {
+                pt = 0; 
+            }else {
+                pt = 1;
+                return
+            }      
+        }
+        
+    }
+
+    function comparacionAtaques(ganador,perdedor){
+        
+        let mostrarMensajes = document.getElementById("esconderMF");
+        procesarLucha(ganador)
+        console.log("gana" + pt)
+        if (pt === 1) {
+            mostrarMensajes.style.backgroundColor = "green";
+            mensaje.textContent = "¡La mascota del enemigo a recibido daño! 💪💪💪";
+            vidasJugador++;
+        }else {
+            procesarLucha(perdedor);
+            console.log("gana" + pt)
+            if (pt === 1) {
+                mostrarMensajes.style.backgroundColor = "red";
+                mensaje.textContent = "¡Tu mascota a recibido daño! 💥💥💥";
+                vidasEnemigo++;
+            }else {
+                mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
+                mensaje.textContent = "No se produce daño en los jugadores 🙈🙈🙈";
+            }
+        }
+    }
+
+    function lucha() {
+        if (atqJugador == "FUEGO") {
+            comparacionAtaques(ganaFuego,pierdeFuego)
+        }else if (atqJugador == "AGUA") {
+            comparacionAtaques(ganaAgua,pierdeAgua)
+        }else if (atqJugador == "TIERRA") {
+            comparacionAtaques(ganaTierra,pierdeTierra)
+        }else if (atqJugador == "RAYO") {
+            comparacionAtaques(ganaRayo,pierdeRayo)
+        }else if (atqJugador == "AIRE") {
+            comparacionAtaques(ganaAire,pierdeAire)
+        }else if (atqJugador == "METAL") {
+            comparacionAtaques(ganaMetal,pierdeMetal)
+        }else /* if (atqJugador == "HIELO")  */{
+            comparacionAtaques(ganaHielo,pierdeHielo)
+        }
+
+        comprobarVidas();
+        
+    }
+
+    function comprobarVidas() {
+
+        if (click === 4) {
+            vJ.textContent = vidasJugador;
+            vE.textContent = vidasEnemigo;
+            function resultados(){
+                if (vidasJugador < vidasEnemigo) {
+                    mostrarMensajes.style.backgroundColor = "red";
+                    mensaje.innerHTML = "¡Perdiste la batalla!... <b>¡El enemigo gana!</b> 😭😭😭";
+                    ataqueN.textContent = "Reinicia el juego";
+                }
+                else {
+                    mostrarMensajes.style.backgroundColor = "green";
+                    mensaje.innerHTML = "¡Felicitaciones, <b>has ganado la batalla!</b> 🥳🥳🥳";
+                    ataqueN.textContent = "Reinicia el juego";
+                }
+            }
+
+            setTimeout(resultados,3000)
+        }else {
+            vJ.textContent = vidasJugador;
+            vE.textContent = vidasEnemigo;
+        }
+    }
+
+    /* alert("Ancho: " + screen.width + " Alto: " + screen.height) */
+    
     btnMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
     btnReiniciar.addEventListener("click", () => {
         location.reload();
