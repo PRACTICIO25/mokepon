@@ -125,7 +125,7 @@ function cargarJuego() {
     let mokeBomper = new Mokepon('Bomper', '../img/bomper.png', 5);
     let mokeBretus = new Mokepon('Bretus', '../img/bretus.png', 5)
     let mokeCanenuto = new Mokepon('Canenuto', '../img/canenuto.png', 5)
-    let mokeCliptus = new Mokepon('Cliptus', '/..img/cliptus.png', 5);
+    let mokeCliptus = new Mokepon('Cliptus', '../img/cliptus.png', 5);
     let mokeDracunius = new Mokepon('Anturium', '../img/anturium.png', 5);
     let mokeEnergor = new Mokepon('Anturium', '../img/anturium.png', 5);
     let mokeFleppo = new Mokepon('Anturium', '../img/anturium.png', 5);
