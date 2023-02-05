@@ -8,7 +8,7 @@
 
 body {
     display: block;
-    height: 90vh;
+    height: 100vh;
     text-align: center;
     background-image: url(../img/2244.png);
     background-repeat: no-repeat;
@@ -20,12 +20,12 @@ body {
     width: 100%;
     height: 90vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.titulo {
+.marco-todo .titulo {
     width: 90%;
     text-align: center;
     color: rgb(255, 0, 0);
@@ -36,10 +36,11 @@ body {
     -webkit-text-stroke: 3px white;
 }
 
-.marco-mascotas {
+.marco-todo .marco-mascotas {
     background-color: rgba(124, 56, 0, 0.651);
     width: 40%;
-    margin: 3% 30%;
+    height: 80vh;
+    margin: 0 30%;
     padding: 1%;
     border-radius: 30px;
     display: flex;
@@ -48,7 +49,7 @@ body {
     align-items: center;
 }
 
-.titulo2 {
+.marco-todo .marco-mascotas .titulo2 {
     margin: 0 10% 5%;
     font-size: 28pt;
     font-weight: bold;
@@ -58,16 +59,30 @@ body {
     -webkit-text-stroke: 1px white;
 }
 
-.contenedor-btns-atq {
-    width: 100%;
-    height: 30vh;
+.marco-todo .marco-mascotas .contenedor-btns-atq {
+    box-sizing: border-box;
+    width: 98%;
+    height: 35vh;
+    padding: 1%;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
+    border: 2px;
 }
 
-.separadores {
+.marco-todo .marco-mascotas .contenedor-btns-atq::-webkit-scrollbar {
+    background-color: rgba(0, 128, 0, 0.486);
+    border-radius: 15px;
+}
+
+.marco-todo .marco-mascotas .contenedor-btns-atq::-webkit-scrollbar-thumb {
+    background-color: rgba(9, 223, 9, 0.651);
+    border-radius: 15px;
+}
+
+.marco-todo .marco-mascotas .contenedor-btns-atq .separadores {
     width: 30%;
     height: 30vh;
     margin: 1%;
@@ -77,39 +92,43 @@ body {
     align-items: center;
     background-color: rgba(0, 0, 255, 0.39);
     border-radius: 25px;
-    font-size: 18pt;
+    font-size: 14pt;
     font-weight: bold;
     font-family: 'Fredoka One', cursive;
     -webkit-text-stroke: 1px white;
     cursor: pointer;
 }
 
-.separadores:hover {
+.marco-todo .marco-mascotas .contenedor-btns-atq .separadores:hover {
     background-color: rgba(0, 0, 255, 0.514);
 }
 
-input {
+.marco-todo .marco-mascotas .contenedor-btns-atq input {
     display: none;
     appearance: none;
 }
 
-input:checked + .separadores {
+.marco-todo .marco-mascotas .contenedor-btns-atq input:checked + .separadores {
     background-color:  rgba(0, 0, 255, 0.726);
 }
 
-.imgMoke {
+.marco-todo .marco-mascotas .contenedor-btns-atq .separadores .imgMoke {
     width: 90%;
 }
 
-#mascota-jugador1, #mascota-enemigo1 {
-    font-weight: bold;
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .mascotaenemigo{
+    font-size: 14pt;
+} 
+
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .mascotajugador {
+    font-size: 14pt;
 }
 
 #ataque-jugador, #ataque-enemigo {
     font-weight: bold;
 }
 
-.seleccionar {
+.marco-todo .marco-mascotas .seleccionar {
     width: 150px;
     height: 45px;
     background-color: rgba(15, 207, 8, 0.685);
@@ -120,18 +139,18 @@ input:checked + .separadores {
     margin: 5% 0 3%;
 }
 
-.seleccionar:hover {
+.marco-todo .marco-mascotas .seleccionar:hover {
     background-color: rgba(15, 207, 8, 0.904);
 }
 
-.marco-mensajes {
+.marco-todo .marco-mensajes {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-.marco-ataque {
+.marco-todo .marco-mensajes .marco-ataque {
     width: 40%;
     background-color: rgba(124, 56, 0, 0.651);
     padding: 1%;
@@ -140,7 +159,7 @@ input:checked + .separadores {
     align-items: center;
 }
 
-.titulo-atq {
+.marco-todo .marco-mensajes .marco-ataque .titulo-atq {
     margin: 0 10% 1%;
     font-size: 28pt;
     font-weight: bold;
@@ -150,7 +169,7 @@ input:checked + .separadores {
     -webkit-text-stroke: 1px white;
 }
 
-.marco-mensaje {
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje {
     width: 94%;
     padding: 1%;
     font-size: 14pt;
@@ -161,7 +180,7 @@ input:checked + .separadores {
 
 }
 
-.tarjetas {
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas {
     width: 50%;
     height: 30vh;
     background-color: rgba(37, 0, 124, 0.651);
@@ -176,23 +195,36 @@ input:checked + .separadores {
     line-height: 20px;
 }
 
-.inf-tarjetas {
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .inf-tarjetas {
     line-height: .8;
-}
-
-#mascota-jugador, #mascota-enemigo {
-    font-size: 24pt;
-    font-weight: bold;
-    font-family: 'Fredoka One', cursive;
-    color: white;
-    -webkit-text-stroke: 2px black;
 }
 
 p {
     line-height: 30px;
 }
 
-#vidas-enemigo, #vidas-jugador {
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .mascotajugador {
+    font-family: 'Fredoka One', cursive;
+    font-size: 24pt;
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .mascotaenemigo{
+    font-family: 'Fredoka One', cursive;
+    font-size: 24pt;
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .inf-tarjetas {
+    font-family: 'Fredoka One', cursive;
+    font-size: 24pt;
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas #vidas-enemigo, #vidas-jugador {
     font-size: 48pt;
     font-weight: bold;
     font-family: 'Fredoka One', cursive;
@@ -201,54 +233,89 @@ p {
     line-height: 1;
 }
 
-.marco-btns-atq {
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq {
     width: 100%;
+    display: block;
+    block-size: auto;
 }
 
-.btn-atq {
-    width: 25%;
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq .btn-atq, .deshabilitar {
+    width: 30%;
     height: 45px;
     font-size: 12pt;
     color: white;
     font-weight: bold;
-    margin: 4% 3% 2%;
+    margin: .5% 3%;
     border-radius: 25px;
     border: 3px white solid;
     cursor: pointer;
 }
 
-#btn-fuego {
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-fuego {
     background-color: rgba(255, 0, 0, 0.993);
 }
 
-#btn-fuego:hover {
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-fuego:hover {
     background-color: rgba(248, 66, 66, 0.767);
 }
 
-#btn-agua {
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-agua {
     background-color: rgba(0, 47, 255, 0.993);
 }
 
-#btn-agua:hover {
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-agua:hover {
     background-color: rgba(62, 96, 250, 0.993);
 }
 
-#btn-tierra {
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-tierra {
     background-color: rgba(67, 204, 3, 0.993);
 }
 
-#btn-tierra:hover {
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-tierra:hover {
     background-color: rgba(117, 207, 75, 0.993);
 }
 
-.marco-resultados {
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-aire {
+    background-color: rgba(3, 204, 204, 0.993);
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-aire:hover {
+    background-color: rgba(65, 206, 206, 0.993);
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-rayo {
+    background-color: rgba(145, 151, 53, 0.616);
+    color: black;
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-rayo:hover {
+    background-color: rgba(157, 161, 95, 0.993);
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-hielo {
+    background-color: rgba(3, 112, 255, 0.993);
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-hielo:hover {
+    background-color: rgba(95, 161, 248, 0.993);
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-metal {
+    background-color: rgba(50, 54, 59, 0.993);
+}
+
+.marco-todo .marco-mensajes .marco-ataque .marco-btns-atq #btn-metal:hover {
+    background-color: rgba(88, 90, 92, 0.993);
+}
+
+.marco-todo .marco-mensajes .marco-resultados {
     width: 50%;
     margin: 1%;
     justify-content: center;
     align-items: center;
 }
 
-.marco-lucha {
+.marco-todo .marco-mensajes .marco-resultados .marco-lucha {
     width: 50%;
     height: 40vh;
     background-color: rgba(124, 56, 0, 0.651);
@@ -264,14 +331,14 @@ p {
     align-items: center;
 }
 
-.inf-lucha {
+.marco-todo .marco-mensajes .marco-resultados .marco-lucha .inf-lucha {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30vh;
 }
 
-.marco-acciones {
+.marco-todo .marco-mensajes .marco-resultados .marco-acciones {
     width: 50%;
     height: 40vh;
     background-color: rgba(124, 56, 0, 0.651);
@@ -293,7 +360,7 @@ p {
     justify-content: center;
 }
 
-#reiniciar {
+.marco-btn-reiniciar #reiniciar {
     width: 150px;
     height: 50px;
     border-radius: 25px;
@@ -301,7 +368,7 @@ p {
     border-color: green;
 }
 
-#reiniciar:hover {
+.marco-btn-reiniciar #reiniciar:hover {
     background-color: rgba(116, 245, 10, 0.842)
 }
 
@@ -315,16 +382,16 @@ p {
         align-items: center;
     }
 
-    .marco-mascotas {
+    .marco-todo .marco-mascotas {
         width: 60%;
         margin: 3% 10%;
     }
     
-    .marco-ataque {
+    .marco-todo .marco-mensajes .marco-ataque {
         width: 60%;
     }
 
-    .imgMoke {
+    .marco-todo .marco-mascotas .contenedor-btns-atq .separadores .imgMoke {
         width: 70%;
     }
 
@@ -361,7 +428,7 @@ p {
         font-size: 24pt;
     }
     
-    #mascota-jugador, #mascota-enemigo {
+    .mascotajugador .mascotaenemigo  {
         font-size: 28pt;
     }
     
@@ -407,12 +474,16 @@ p {
         align-items: center;
     }
 
-    .marco-mascotas {
+    .marco-todo .marco-mascotas {
         width: 70%;
         margin: 3% 10%;
     }
 
-    #mascota-jugador, #mascota-enemigo {
+    .marco-todo .marco-mascotas .contenedor-btns-atq {
+        overflow-y: hidden;
+    }
+
+    .mascotajugador .mascotaenemigo {
         font-size: 22pt;
     }
 
@@ -448,18 +519,18 @@ p {
         padding: 0;
     }
 
-    .titulo {
+    .marco-todo .titulo {
         margin: 0 5% 0%;
         font-size: 46pt;
         -webkit-text-stroke: 1.5px white;
     }
 
-    .titulo-atq {
-        font-size: 24pt;
+    .marco-todo .marco-mensajes .marco-ataque .titulo-atq  {
+        font-size: 20pt;
         margin-bottom: 1%;
     }
 
-    .marco-mascotas {
+    .marco-todo .marco-mascotas {
         width: 90%;
         height: 100vh;
         margin: 3% 5%;
@@ -479,7 +550,7 @@ p {
         line-height: 20px;
     }
     
-    #mascota-jugador, #mascota-enemigo {
+    .mascotajugador .mascotaenemigo {
         font-size: 20pt;
     }
     
@@ -507,13 +578,35 @@ p {
 }
 
 @media (max-width: 650px) {
-    #mascota-jugador, #mascota-enemigo {
+    .mascota-jugador .mascota-enemigo {
         font-size: 18pt;
     }
 
     .btn-atq {
         font-size: 14pt;
         width: 60%;
+    }
+
+    .marco-todo .marco-mensajes .marco-ataque .marco-btns-atq {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 94%;
+    }
+
+    .marco-todo .marco-mensajes .marco-ataque .marco-btns-atq .btn-atq{
+        width: 60%;
+    }
+
+    .marco-todo .marco-mensajes .marco-resultados .marco-lucha {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .marco-todo .marco-mensajes .marco-resultados .marco-acciones {
+        width: 100%;
+        height: 30vh;
     }
 }
 
@@ -526,17 +619,21 @@ p {
         justify-content: center;
         align-items: center;
     }
+
+    .marco-todo .titulo {
+        font-size: 50pt;
+    }
     
     .marco-todo {
         height: 80vh;
-        align-items: flex-end;
+        align-items: center;
     }
 
-    .titulo-atq {
+    .marco-todo .marco-mensajes .marco-ataque .titulo-atq {
         font-size: 20pt;
     }
 
-    .marco-mascotas {
+    .marco-todo .marco-mascotas {
         width: 90%;
         margin: 3% 5%;
     }
@@ -545,8 +642,12 @@ p {
         height: 20vh;
     }
 
-    #mascota-jugador, #mascota-enemigo {
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .mascotajugador .mascotaenemigo {
         font-size: 18pt;
+    }
+
+    .inf-tarjetas {
+        font-size: 20pt;
     }
 }
 
@@ -555,12 +656,16 @@ p {
         font-size: 20pt;
     }
 
-    #mascota-jugador, #mascota-enemigo {
-        font-size: 14pt;
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .mascotajugador {
+        font-size: 24pt;
+    }
+    
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .mascotaenemigo{
+        font-size: 24pt;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 504px) {
 
     body {
         display: block;
@@ -576,61 +681,85 @@ p {
         align-items: center;
         padding-top: 20%;
     }
-
-    .titulo2 {
-        font-size: 22pt;
+    
+    .marco-todo .titulo {
+        font-size: 40pt;
     }
 
-    .marco-mascotas {
+    .marco-todo .marco-mascotas {
         width: 90%;
         height: 90vh;
         margin: 3% 1%;
     }
 
-    .separadores {
-        font-size: 24pt;
-        height: 25vh;
+    .inf-tarjetas {
+        font-size: 16pt;
     }
 
-    .marco-mensajes {
+    .marco-todo .marco-mascotas .titulo2 {
+        font-size: 22pt;
+    }
+
+    .marco-todo .marco-mascotas .contenedor-btns-atq .separadores {
+        font-size: 16pt;
+        height: 15vh;
+        
+    }
+
+    .marco-todo .marco-mensajes {
         justify-content: left;
         height: 50vh;
     }
     
-    .marco-ataque {
+    .marco-todo .marco-mensajes .marco-ataque {
         width: 50%;
         margin: 3% 0;
     }
     
-    .titulo-atq {
+    .marco-todo .marco-mensajes .marco-ataque .titulo-atq {
         margin: 0 1% 1%;
         font-size: 16pt;
     }
 
-    .tarjetas {
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas {
         height: 20vh;
     }
 
-    #mascota-jugador, #mascota-enemigo  {
-        font-size: 12pt;
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .inf-tarjetas .mascotajugador {
+        font-size: 14pt;
     }
 
-    #vidas-jugador, #vidas-enemigo {
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .inf-tarjetas .mascotaenemigo  {
+        font-size: 14pt;
+    }
+
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .inf-tarjetas .vidasjugador .vidasenemigo {
         font-size: 28pt;
+    }
+
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .inf-tarjetas {
+        font-size: 12pt;
     }
 
     p{
         line-height: 20px;
     }
 
-    .marco-mensajes {
-        margin-bottom: 3%;
+    .marco-todo .marco-mensajes .marco-resultados {
+        overflow-y: hidden;
     }
 
-    .marco-lucha, .marco-acciones {
+    .marco-todo .marco-mensajes .marco-resultados .marco-acciones {
         width: 100%;
-        height: 21vh;
-        padding: 1%;
+        height: 20vh;
+        margin: 1% 2% 1% 0;
+        font-size: 14pt;
+    }
+
+    .marco-todo .marco-mensajes .marco-resultados .marco-lucha {
+        width: 100%;
+        height: 20vh;
+        margin: 1%;
         font-size: 14pt;
     }
 
@@ -641,45 +770,73 @@ p {
     .marco-todo {
         height: 70vh;
         padding-top: 0;
+        align-items: center;
+        justify-content: center;
     }
 
-    .titulo {
+    .marco-todo .titulo {
         font-size: 36pt;
+        width: 80%;
         margin-bottom: 3%;
+        text-align: center;
+        margin: 0;
     }
 
-    .titulo2 {
+    .marco-todo .marco-mascotas .titulo2 {
         font-size: 20pt;
         margin: 1%;
     }
 
-    .titulo-atq {
+    .marco-todo .marco-mensajes .titulo-atq {
         font-size: 14pt;
     }
 
-    .marco-ataque {
+    .marco-todo .marco-mensajes .marco-ataque {
         width: 50%;
     }
 
-    .marco-mensaje {
+    .marco-todo .marco-mensajes .marco-ataque .titulo-atq {
+        font-size: 12pt;
+    }
+
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje {
         width: 100%;
         margin: 0;
     }
 
-    .tarjetas {
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas {
         width: 50%;
         height: 15vh;
+    }
+
+    .marco-todo .marco-mensajes .marco-ataque .marco-mensaje .tarjetas .inf-tarjetas {
+        font-size: 10pt;
     }
 
     #mascota-jugador, #mascota-enemigo  {
         font-size: 10pt;
     }
 
-    .btn-atq {
+    .marco-todo .marco-mensajes .marco-ataque .marco-btns-atq {
+        width: 100%;
+    }
+
+    .marco-todo .marco-mensajes .marco-ataque .marco-btns-atq .btn-atq {
         width: 90%;
     }
 
-    .marco-lucha, .marco-acciones {
+    .marco-todo .marco-mensajes .marco-resultados {
+        width: 50%;
+    }
+
+    .marco-todo .marco-mensajes .marco-resultados .marco-acciones {
+        width: 100%;
+        height: 20vh;
+        margin: 1% 2% 1% 0;
+        font-size: 14pt;
+    }
+
+    .marco-todo .marco-mensajes .marco-resultados .marco-lucha {
         width: 100%;
         height: 20vh;
         margin: 1%;
@@ -692,7 +849,9 @@ p {
     }
 
     .marco-btn-reiniciar {
+        width: 80%;
         justify-content: center;
+        align-items: center;
     }
 }
 
@@ -713,4 +872,3 @@ p {
         margin: 1%;
     }
 }
-
