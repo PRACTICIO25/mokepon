@@ -282,8 +282,6 @@ function cargarJuego() {
                 else {
                     mostrarMensajes.style.display = "flex";
                 }
-                
-                mostrarMensajes.style.backgroundColor = "transparent";
             }
             
             boton.addEventListener("click", (e) => {
