@@ -121,7 +121,7 @@ function cargarJuego() {
         }
     }
 
-    let mokeAnturium = new Mokepon('Anturium', 'mokepon/img/anturium.png', 5);
+    let mokeAnturium = new Mokepon('Anturium', '../img/anturium.png', 5);
     /*let mokeBasilius = new Mokepon('Basilius', '/img/basilius.png', 5);
     let mokeBomper = new Mokepon('Bomper', '/img/bomper.png', 5);
     let mokeBretus = new Mokepon('Bretus', '/img/bretus.png', 5)
@@ -198,7 +198,7 @@ function cargarJuego() {
         {nombre: 'Aire 🌪️', id: 'btn-aire'},
     )
 
-    mokepones.push(mokeAnturium,mokeBasilius,mokeBomper,mokeBretus,mokeCanenuto,mokeCliptus)
+    mokepones.push(mokeAnturium,/*mokeBasilius,mokeBomper,mokeBretus,mokeCanenuto,mokeCliptus*/)
 
     mokepones.forEach((mokepon) => {
         opcionMokepones = `
