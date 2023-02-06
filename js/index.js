@@ -403,7 +403,7 @@ function cargarJuego() {
     }
 
     function comparacionAtaques(ganador,perdedor){
-        mostrarMF = document.getElementById("esconderMF");
+        
         procesarLucha(ganador)
         console.log("gana" + pt)
         if (pt === 1) {
