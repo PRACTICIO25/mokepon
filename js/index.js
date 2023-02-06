@@ -121,36 +121,131 @@ function cargarJuego() {
         }
     }
 
-    let mokeAnturium = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeBasilius = new Mokepon('Basilius', 'img/basilius.png', 5);
-    let mokeBomper = new Mokepon('Bomper', 'img/bomper.png', 5);
-    let mokeBretus = new Mokepon('Bretus', 'img/bretus.png', 5)
-    let mokeCanenuto = new Mokepon('Canenuto', 'img/canenuto.png', 5)
-    let mokeCliptus = new Mokepon('Cliptus', 'img/cliptus.png', 5);
-    let mokeDracunius = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeEnergor = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeFleppo = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeFlopper = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeFonson = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeHolgon = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeJounjo = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeManson = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeMinus = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeMortum = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeMurdor = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeNavegris = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokePlesium = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeRomron = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeSobrian = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeSolver = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeSulgun = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeTobias = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeVolmer = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeYegoto = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeYohoo = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeYompler = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeZooter = new Mokepon('Anturium', 'img/anturium.png', 5);
-    let mokeZoripon = new Mokepon('Anturium', 'img/anturium.png', 5);
+    let mokepones = [];
+    let atqJugador = [];
+    let atqEnemigo = [];
+    let atqEnemigoSel = [];
+    let atqj;
+    let atqE;
+    let opcionMokepones;
+    let anturium;
+    let basilius;
+    let bomper;
+    let bretus;
+    let canenuto;
+    let cliptus;
+    let dracunius;
+    let energor;
+    let fleppo;
+    let flopper;
+    let fonson;
+    let holgon;
+    let jounjo;
+    let manson;
+    let minus;
+    let mortum;
+    let murdor;
+    let navegris;
+    let plesium;
+    let romron;
+    let sobrian;
+    let solver;
+    let sulgun;
+    let tobias;
+    let volmer;
+    let yegoto;
+    let yohoo;
+    let yompler;
+    let zooter;
+    let zoripon;
+    let vidasEnemigo = 0;
+    let vidasJugador = 0;
+    let selMJ;
+    let seleccionME;
+    let indexAtaqueJugador;
+    let indexAtaqueEnemigo;
+    let selME;
+    let btnFuego;
+    let btnAgua;
+    let btnTierra;
+    let botones = [];
+    let botonesMascotas = [];
+    let deshabilitar;
+    let pt;
+    let click = 0;
+    let pierdeFuego = ["AGUA", "HIELO"];
+    let ganaFuego = ["AIRE", "METAL","RAYO"];
+    let pierdeAgua = ["TIERRA","METAL","RAYO"];
+    let ganaAgua = ["FUEGO", "AIRE"];
+    let pierdeTierra = ["RAYO", "METAL", "AIRE"];
+    let ganaTierra = ["AGUA", "HIELO"];
+    let pierdeRayo = ["AIRE", "FUEGO"];
+    let ganaRayo = ["TIERRA", "AGUA", "HIELO", "METAL"];
+    let pierdeAire = ["FUEGO", "AGUA", "HIELO"];
+    let ganaAire = ["RAYO", "TIERRA", "METAL"];
+    let pierdeMetal = ["FUEGO", "RAYO", "AIRE"];
+    let ganaMetal = ["AGUA", "TIERRA", "HIELO"];
+    let pierdeHielo = ["TIERRA", "METAL", "RAYO"];
+    let ganaHielo = ["FUEGO", "AIRE"];
+    
+
+    /* logica de lucha
+    Elementales:
+
+    FUEGO: Pierde contra AGUA, HIELO,  y gana contra AIRE, METAL, RAYO
+
+    AGUA: Pierde contra TIERRA, METAL, RAYO y gana contra FUEGO, AIRE
+
+    TIERRA: Pierde contra RAYO, METAL, AIRE y gana contra AGUA, HIELO
+
+    RAYO: Pierda contra AIRE, FUEGO y gana contra TIERRA, AGUA, HIELO, METAL
+
+    AIRE: Pierda contra FUEGO, AGUA, HIELO y gana contra RAYO, TIERRA, METAL
+
+    METAL: Pierda contra FUEGO, RAYO, AIRE y gana contra AGUA, TIERRA, HIELO
+
+    HIELO: Pierde contra TIERRA, METAL, RAYO y gana contra FUEGO, AIRE
+    */
+
+    class Mokepon {
+        constructor (nombre, imagen, vida) {
+            this.nombre = nombre;
+            this.imagen = imagen;
+            this.vida = vida;
+            this.ataques = [];
+        }
+    }
+
+    let mokeAnturium = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeBasilius = new Mokepon('Basilius', '/img/basilius.png', 5);
+    let mokeBomper = new Mokepon('Bomper', '/img/bomper.png', 5);
+    let mokeBretus = new Mokepon('Bretus', '/img/bretus.png', 5)
+    let mokeCanenuto = new Mokepon('Canenuto', '/img/canenuto.png', 5)
+    let mokeCliptus = new Mokepon('Cliptus', '/img/cliptus.png', 5);
+    let mokeDracunius = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeEnergor = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeFleppo = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeFlopper = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeFonson = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeHolgon = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeJounjo = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeManson = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeMinus = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeMortum = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeMurdor = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeNavegris = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokePlesium = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeRomron = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeSobrian = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeSolver = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeSulgun = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeTobias = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeVolmer = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeYegoto = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeYohoo = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeYompler = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeZooter = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeZoripon = new Mokepon('Anturium', '/img/anturium.png', 5);
 
     /* ATAQUES:
     {nombre: 'Tierra 🌱', id: 'btn-tierra'},
@@ -275,7 +370,6 @@ function cargarJuego() {
 
         botones.forEach((boton) => {
             function validarResolucion() {
-          
                 if (screen.width < 1200) {
                     mostrarMensajes.style.display = "block";
                 }
@@ -404,21 +498,22 @@ function cargarJuego() {
 
     function comparacionAtaques(ganador,perdedor){
         
+        let mostrarMensajes = document.getElementById("esconderMF");
         procesarLucha(ganador)
         console.log("gana" + pt)
         if (pt === 1) {
-            mostrarMF.style.backgroundColor = "green";
+            mostrarMensajes.style.backgroundColor = "green";
             mensaje.textContent = "¡La mascota del enemigo a recibido daño! 💪💪💪";
             vidasJugador++;
         }else {
-            mostrarMF(perdedor);
+            procesarLucha(perdedor);
             console.log("gana" + pt)
             if (pt === 1) {
-                mostrarMF.style.backgroundColor = "red";
+                mostrarMensajes.style.backgroundColor = "red";
                 mensaje.textContent = "¡Tu mascota a recibido daño! 💥💥💥";
                 vidasEnemigo++;
             }else {
-                mostrarMF.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
+                mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
                 mensaje.textContent = "No se produce daño en los jugadores 🙈🙈🙈";
             }
         }
