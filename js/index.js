@@ -121,8 +121,8 @@ function cargarJuego() {
         }
     }
 
-    let mokeAnturium = new Mokepon('Anturium', '/img/anturium.png', 5);
-    let mokeBasilius = new Mokepon('Basilius', '/img/basilius.png', 5);
+    let mokeAnturium = new Mokepon('Anturium', 'img/anturium.png', 5);
+    /*let mokeBasilius = new Mokepon('Basilius', '/img/basilius.png', 5);
     let mokeBomper = new Mokepon('Bomper', '/img/bomper.png', 5);
     let mokeBretus = new Mokepon('Bretus', '/img/bretus.png', 5)
     let mokeCanenuto = new Mokepon('Canenuto', '/img/canenuto.png', 5)
@@ -150,7 +150,7 @@ function cargarJuego() {
     let mokeYohoo = new Mokepon('Anturium', '/img/anturium.png', 5);
     let mokeYompler = new Mokepon('Anturium', '/img/anturium.png', 5);
     let mokeZooter = new Mokepon('Anturium', '/img/anturium.png', 5);
-    let mokeZoripon = new Mokepon('Anturium', '/img/anturium.png', 5);
+    let mokeZoripon = new Mokepon('Anturium', '/img/anturium.png', 5);*/
 
     /* ATAQUES:
     {nombre: 'Tierra 🌱', id: 'btn-tierra'},
