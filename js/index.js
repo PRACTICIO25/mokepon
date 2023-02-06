@@ -216,7 +216,7 @@ function cargarJuego() {
         }
     }
 
-    let mokeAnturium = new Mokepon('Anturium', 'img/anturium.png', 5);
+    let mokeAnturium = new Mokepon('Anturium', '/img/anturium.png', 5);
     let mokeBasilius = new Mokepon('Basilius', '/img/basilius.png', 5);
     let mokeBomper = new Mokepon('Bomper', '/img/bomper.png', 5);
     let mokeBretus = new Mokepon('Bretus', '/img/bretus.png', 5)
@@ -498,22 +498,21 @@ function cargarJuego() {
 
     function comparacionAtaques(ganador,perdedor){
         
-        let mostrarMensajes = document.getElementById("esconderMF");
         procesarLucha(ganador)
         console.log("gana" + pt)
         if (pt === 1) {
-            mostrarMensajes.style.backgroundColor = "green";
+            mostrarMF.style.backgroundColor = "green";
             mensaje.textContent = "¡La mascota del enemigo a recibido daño! 💪💪💪";
             vidasJugador++;
         }else {
             procesarLucha(perdedor);
             console.log("gana" + pt)
             if (pt === 1) {
-                mostrarMensajes.style.backgroundColor = "red";
+                mostrarMF.style.backgroundColor = "red";
                 mensaje.textContent = "¡Tu mascota a recibido daño! 💥💥💥";
                 vidasEnemigo++;
             }else {
-                mostrarMensajes.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
+                mostrarMF.style.backgroundColor = "rgba(124, 56, 0, 0.651)";
                 mensaje.textContent = "No se produce daño en los jugadores 🙈🙈🙈";
             }
         }
