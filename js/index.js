@@ -275,13 +275,15 @@ function cargarJuego() {
 
         botones.forEach((boton) => {
             function validarResolucion() {
-                mostrarMensajes.style.backgroundColor = "transparent";
+          
                 if (screen.width < 1200) {
                     mostrarMensajes.style.display = "block";
                 }
                 else {
                     mostrarMensajes.style.display = "flex";
                 }
+                
+                mostrarMensajes.style.backgroundColor = "transparent";
             }
             
             boton.addEventListener("click", (e) => {
